@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Página Inicial";
+}
+
+<div class="container">
+    <h2 class="text-center">>>>> Sistema de Controle Interno - <span class="text-danger">SENAI MVC</span> <<<<</h2>
+    <table class="table table-striped table-bordered caption-top">
+        <caption class="fw-bold">Lista de Clientes</caption>
+        <thead>
+            <tr class="table-info">
+                <th scope="col">Código</th>
+                <th scope="col">Nome</th>
+                <th scope="col">CPF</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Paciente (PET)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in @ViewBag.listaClientes)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.Nome</td>
+                    <td>@item.Cpf</td>
+                    <td>@item.Email</td>
+                    <td>@item.Paciente</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    <table class="table table-striped table-bordered caption-top">
+        <caption class="fw-bold">Lista de Fornecedores</caption>
+        <thead>
+            <tr class="table-info">
+                <th scope="col">Código</th>
+                <th scope="col">Nome</th>
+                <th scope="col">CNPJ</th>
+                <th scope="col">E-mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in @ViewBag.listaFornecedores)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.Nome</td>
+                    <td>@item.Cnpj</td>
+                    <td>@item.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
